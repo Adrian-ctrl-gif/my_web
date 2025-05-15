@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример сайта</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background">
+    <div class="centered-text">
+      <h1>Добро пожаловать на мой сайт!</h1>
+      <p>Это пример с фоновым изображением и тестом ниже.</p>
+    </div>
+  </div>
+
+  <div class="quiz-section">
+    <h2>Небольшой тест</h2>
+    <form id="quizForm">
+      <p>1. Какой язык используется для создания сайтов?</p>
+      <label><input type="radio" name="q1" value="a"> Python</label><br>
+      <label><input type="radio" name="q1" value="b"> HTML</label><br>
+      <label><input type="radio" name="q1" value="c"> C++</label><br>
+
+      <p>2. Что делает CSS?</p>
+      <label><input type="radio" name="q2" value="a"> Добавляет функциональность</label><br>
+      <label><input type="radio" name="q2" value="b"> Создает базу данных</label><br>
+      <label><input type="radio" name="q2" value="c"> Отвечает за стиль</label><br>
+
+      <button type="button" onclick="checkAnswers()">Проверить</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const form = document.getElementById('quizForm');
+      let score = 0;
+
+      if (form.q1.value === 'b') score++;
+      if (form.q2.value === 'c') score++;
+
+      document.getElementById('result').innerText = "Вы набрали: " + score + " из 2";
+    }
+  </script>
+</body>
+</html>
